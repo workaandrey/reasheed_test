@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UploadController;
 use App\Models\Company;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
@@ -43,3 +44,7 @@ Route::get('/', function () {
         })
     ];
 });
+
+
+Route::get('upload', [UploadController::class, 'form']);
+Route::post('upload', [UploadController::class, 'handleFormSubmit']);
